@@ -25,7 +25,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
+
 ol, ul {
 	list-style: none;
 }
@@ -77,5 +79,37 @@ ul {
   list-style: none;
 }
 
+b {
+  font-weight: 600;
+}
+
+.character-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.character{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(110, 110, 110,0.5);
+  background-color: rgb(96, 251, 191,0.5);
+  box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.5);
+  width: 250px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.3em;
+}
+
+.character h3{
+  margin: 10px;
+  margin-top: 20px;
+}
+.character p{
+  margin: 10px;
+}
+
+.character img {
+  box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.3);
+}
 
 
