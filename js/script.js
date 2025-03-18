@@ -1,7 +1,9 @@
-
 const list_DIV = document.getElementById('character-list');
+let actualPage = 1;
 
-fetch('https://rickandmortyapi.com/api/character')
+function fetchCharacter(page){
+    clearList ();
+    fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
     .then((response) => {
         if (!response.ok) throw new Error('Error en la solicitud');
         return response.json();
@@ -21,3 +23,24 @@ fetch('https://rickandmortyapi.com/api/character')
     .catch((error) => {
         console.error("Error: No se pudo procesar la solicitud")
     });
+}
+
+function clearList (){
+    list_DIV.innerHTML="";
+}
+
+const prevButton = document.getElementById("prev-page");
+const nextButton = document.getElementById("next-page");
+
+
+fetchCharacter(actualPage);
+
+prevButton.addEventListener("click", () => {
+    if(actualPage>1) actualPage--;
+    fetchCharacter(actualPage)
+})
+nextButton.addEventListener("click", () => {
+    actualPage++;
+    fetchCharacter(actualPage)
+})
+
