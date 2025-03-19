@@ -40,7 +40,7 @@ prevButton.addEventListener("click", () => {
     fetchCharacter(actualPage)
 })
 nextButton.addEventListener("click", () => {
-    actualPage++;
+    if(actualPage<42) actualPage++;
     fetchCharacter(actualPage)
 })
 
